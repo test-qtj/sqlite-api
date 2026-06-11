@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlite-api"
+version = "1.0.0"
+description = "Drop a SQLite file, get an instant REST API — with OpenAPI docs, filtering, and pagination."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Your Name"}]
+keywords = ["sqlite", "rest-api", "cli", "fastapi", "openapi"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "fastapi>=0.109",
+    "uvicorn[standard]>=0.27",
+]
+
+[project.scripts]
+sqlite-api = "sqlite_api.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourname/sqlite-api"
+Repository = "https://github.com/yourname/sqlite-api"
+
+[tool.setuptools.packages.find]
+include = ["sqlite_api*"]
